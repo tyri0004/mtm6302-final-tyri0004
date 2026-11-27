@@ -565,3 +565,41 @@ function displayQuote() {
     // Update the quote summary.
     calculateTotal();
 }
+
+// ================================================
+// 8. UPDATE QUANTITIES
+// ================================================
+
+function updateQuantity(productId, newQuantity) {
+
+    const item = quote.find(item => {
+        return item.productId === Number(productId);
+    });
+
+    if (!item) {
+        showError("This quote item could not be found.");
+        displayQuote();
+        return;
+    }
+
+    // Check that the quantity is a positive whole number.
+    const quantity = Number(newQuantity);
+
+    if (!Number.isInteger(quantity) || quantity < 1) {
+
+        showError("Please enter a valid whole number greater than zero.");
+
+        // Restore the previous valid quantity.
+        displayQuote();
+        return;
+    }
+
+    // Update the selected product quantity.
+    item.quantity = quantity;
+
+    // Save and refresh the quote.
+    saveQuote();
+    displayQuote();
+
+    hideMessages();
+}
