@@ -439,3 +439,43 @@ function filterProducts(category) {
         });
     }
 }
+
+// ================================================
+// 6. ADD PRODUCTS TO QUOTE
+// ================================================
+
+function addToQuote(productId) {
+
+    // Find the selected product.
+    const product = products.find(item => item.id === Number(productId));
+
+    // Check whether the product exists.
+    if (!product) {
+        showError("Sorry, this product could not be found.");
+        return;
+    }
+
+    // Check whether the product is already in the quote.
+    const existingItem = quote.find(item => item.productId === product.id);
+
+    if (existingItem) {
+
+        // Increase the quantity if it already exists.
+        existingItem.quantity++;
+
+    } else {
+
+        // Otherwise, add it with a starting quantity of one.
+        quote.push({
+            productId: product.id,
+            quantity: 1
+        });
+    }
+
+    // Save and refresh the quote.
+    saveQuote();
+    displayQuote();
+
+    showSuccess(`${product.name} added to your quote.`);
+}
+
