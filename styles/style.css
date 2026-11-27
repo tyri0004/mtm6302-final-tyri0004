@@ -1,0 +1,14 @@
+/* Site variables */
+
+:root {
+    --primary-color: #172B4D;
+    --secondary-color: #FF8A35;
+    --background-color: #FFFFFF;
+    --light-grey: #F4F6F8;
+
+    --text-color: #263238;
+    --muted-color: #667085;
+    --border-color: #E1E5EA;
+
+    --font-family: 'Poppins', sans-serif;
+}
