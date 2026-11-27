@@ -622,3 +622,51 @@ function removeFromQuote(productId) {
 
     showSuccess("Product removed from your quote.");
 }
+
+// ================================================
+// 10. CALCULATE TOTALS
+// ================================================
+
+function calculateTotal() {
+
+    let total = 0;
+    let quantityTotal = 0;
+
+    // Calculate the subtotal for each product.
+    quote.forEach(item => {
+
+        const product = products.find(product => {
+            return product.id === item.productId;
+        });
+
+        if (product) {
+
+            total += product.price * item.quantity;
+
+            quantityTotal += item.quantity;
+        }
+    });
+
+    // Count the number of different products in the quote.
+    const uniqueItemCount = quote.length;
+
+    // Update the quote summary on the page.
+    if (itemCount) {
+        itemCount.textContent = uniqueItemCount;
+    }
+
+    if (itemCountSummary) {
+        itemCountSummary.textContent = uniqueItemCount;
+    }
+
+    if (totalQuantity) {
+        totalQuantity.textContent = quantityTotal;
+    }
+
+    if (estimatedTotal) {
+        estimatedTotal.textContent = formatPrice(total);
+    }
+
+    return total;
+}
+
