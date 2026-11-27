@@ -960,5 +960,34 @@ textarea:focus-visible {
 
 }
 
+/* =========================================
+   small mobile
+========================================= */
+
+@media (max-width: 400px) {
+
+    .container {
+        width: 92%;
+    }
+
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+
+    .main-navigation a {
+        font-size: 0.7rem;
+    }
+
+    .filter-button {
+        padding: 7px 9px;
+        font-size: 0.7rem;
+    }
+
+    .quote-sidebar {
+        padding: 17px;
+    }
+
+}
+
 
 
