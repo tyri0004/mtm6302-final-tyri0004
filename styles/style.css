@@ -235,7 +235,39 @@ textarea:focus-visible {
     background-color: #E97522;
     transform: translateY(-2px);
 }
+.confirmation-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+}
 
+.confirmation-buttons button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#confirm-clear {
+    background-color: #172B4D;
+    color: #FFFFFF;
+}
+
+#confirm-clear:hover {
+    background-color: #243f6b;
+}
+
+#cancel-clear {
+    background-color: #E1E5EA;
+    color: #172B4D;
+}
+
+#cancel-clear:hover {
+    background-color: #d1d7df;
+}
 
 /* =========================================
    shop section
