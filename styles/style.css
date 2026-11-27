@@ -77,3 +77,68 @@ textarea:focus-visible {
     outline: 3px solid var(--secondary-color);
     outline-offset: 3px;
 }
+
+
+/* =========================================
+  header and navigation
+========================================= */
+
+.site-header {
+    width: 100%;
+    background-color: var(--background-color);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navigation {
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo {
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--secondary-color);
+}
+
+.main-navigation {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.main-navigation a {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.main-navigation a:hover {
+    color: var(--secondary-color);
+}
+
+.nav-button {
+    display: inline-block;
+    padding: 11px 22px;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.nav-button:hover {
+    background-color: var(--secondary-color);
+}
