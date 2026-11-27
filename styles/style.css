@@ -235,38 +235,50 @@ textarea:focus-visible {
     background-color: #E97522;
     transform: translateY(-2px);
 }
+/* Confirmation Button Layout */
 .confirmation-buttons {
     display: flex;
     gap: 10px;
     margin-top: 12px;
 }
 
+/* Both confirmation buttons */
 .confirmation-buttons button {
     flex: 1;
-    padding: 10px;
+    padding: 10px 14px;
+
     border: none;
     border-radius: 6px;
+
     font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
     font-weight: 600;
+
     cursor: pointer;
+    opacity: 1;
 }
 
+/* Yes, Clear Button */
 #confirm-clear {
-    background-color: #172B4D;
-    color: #FFFFFF;
+    background-color: #172B4D !important;
+    color: #FFFFFF !important;
 }
 
+/* Yes, Clear Hover */
 #confirm-clear:hover {
-    background-color: #243f6b;
+    background-color: #243F6B !important;
 }
 
+/* Cancel Button */
 #cancel-clear {
-    background-color: #E1E5EA;
-    color: #172B4D;
+    background-color: #F4F6F8 !important;
+    color: #172B4D !important;
+    border: 1px solid #E1E5EA !important;
 }
 
+/* Cancel Hover */
 #cancel-clear:hover {
-    background-color: #d1d7df;
+    background-color: #E1E5EA !important;
 }
 
 /* =========================================
