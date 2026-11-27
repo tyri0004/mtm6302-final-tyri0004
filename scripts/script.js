@@ -900,3 +900,22 @@ if (cancelClearButton) {
     cancelClearButton.addEventListener("click", cancelClear);
 }
 
+// ================================================
+// 14. STARTUP AND INITIALIZATION
+// ================================================
+
+function initializeApp() {
+
+    // Restore any previously saved quote.
+    loadQuote();
+
+    // Display all available products.
+    filterProducts("All");
+
+    // Display the saved quote and calculate totals.
+    displayQuote();
+
+}
+
+// Start the application after the HTML has loaded.
+initializeApp();
