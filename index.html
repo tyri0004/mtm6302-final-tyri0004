@@ -323,6 +323,128 @@
 
                     </div>
 
+                <!-- selected products -->
+
+                    <div id="quote-items" aria-live="polite" aria-relevant="additions removals text">
+
+
+                            <!-- initial empty state-->
+
+                            <div
+                                class="quote-empty"
+                                id="empty-quote"
+                            >
+
+                                <div
+                                    class="empty-icon"
+                                    aria-hidden="true"
+                                >
+                                    +
+                                </div>
+
+                                <h3>
+                                    Your quote is empty
+                                </h3>
+
+                                <p>
+                                    Start by exploring our products
+                                    and adding your favourites.
+                                </p>
+
+                            </div>
+
+
+                            <!--
+                                JavaScript will insert selected
+                                products here.
+
+                                Each selected product will include:
+                                - Product name
+                                - Product price
+                                - Quantity controls
+                                - Subtotal
+                                - Remove button
+                            -->
+
+
+                    </div>
+
+                    <!-- quote calculations -->
+
+                    <div class="quote-calculation">
+
+                            <div class="summary-row">
+
+                                <span>
+                                    Selected Products
+                                </span>
+
+                                <strong id="item-count-summary">
+                                    0
+                                </strong>
+
+                            </div>
+
+
+                            <div class="summary-row">
+
+                                <span>
+                                    Total Quantity
+                                </span>
+
+                                <strong id="total-quantity">
+                                    0
+                                </strong>
+
+                            </div>
+
+
+                            <div class="summary-divider"></div>
+
+
+                            <div class="summary-total">
+
+                                <span>
+                                    Estimated Total
+                                </span>
+
+                                <strong id="estimated-total">
+                                    $0.00
+                                </strong>
+
+                            </div>
+
+
+                            <p class="quote-disclaimer">
+                                This is an estimated quote only.
+                                Final pricing will be confirmed
+                                by ZonMaxSign.
+                            </p>
+
+                    </div>
+                    <!-- project notes -->
+
+                    <div class="project-notes">
+
+                            <label for="project-notes">
+                                Project Notes
+                                <span>(Optional)</span>
+                            </label>
+
+                            <textarea
+                                id="project-notes"
+                                name="project-notes"
+                                rows="3"
+                                placeholder="Add details about your signage project..."
+                            ></textarea>
+
+                    </div>
+
+                    <!-- clear quote button -->
+
+                     <button type="button" class="clear-button" id="clear-quote">
+                     Clear Quote List
+                    </button>
 
 
         </section>
