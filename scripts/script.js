@@ -603,3 +603,22 @@ function updateQuantity(productId, newQuantity) {
 
     hideMessages();
 }
+
+
+// ================================================
+// 9. REMOVE PRODUCTS FROM QUOTE
+// ================================================
+
+function removeFromQuote(productId) {
+
+    // Remove the selected product from the quote array.
+    quote = quote.filter(item => {
+        return item.productId !== Number(productId);
+    });
+
+    // Save and refresh the quote.
+    saveQuote();
+    displayQuote();
+
+    showSuccess("Product removed from your quote.");
+}
