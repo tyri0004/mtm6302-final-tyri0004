@@ -209,3 +209,58 @@ JAVASCRIPT PSEUDOCODE PLAN
 END OF JAVASCRIPT PSEUDOCODE PLAN
 ==================================================
 */
+
+/*
+==================================================
+ZONMAXSIGN - Javascript
+==================================================
+*/
+
+
+// ================================================
+// 1. VARIABLES AND PRODUCT DATA
+// ================================================
+
+// Store all available sign products.
+const products = [
+    {
+        id: 1,
+        name: "Clear Acrylic Sign",
+        image: "images/acrylic-sign.jpg",
+        description: "A clean and professional acrylic sign for businesses and storefronts.",
+        category: "Acrylic",
+        size: "Custom sizes available",
+        price: 89
+    },
+    {
+        id: 2,
+        name: "LED Business Sign",
+        image: "images/led-sign.jpg",
+        description: "An illuminated LED sign designed to help your business stand out.",
+        category: "LED",
+        size: "Custom sizes available",
+        price: 149
+    },
+    {
+        id: 3,
+        name: "Floor Display Stand",
+        image: "images/floor-display.jpg",
+        description: "A freestanding display sign for promotions, events, and businesses.",
+        category: "Display",
+        size: "Standard floor display",
+        price: 129
+    }
+];
+
+// Store the products selected by the user.
+let quote = [];
+
+// Store the currently selected product category.
+let selectedCategory = "All";
+
+// Local Storage key.
+const storageKey = "zonmaxsignQuote";
+
+
+
+
