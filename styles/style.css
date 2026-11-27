@@ -1,4 +1,6 @@
-/* base styles */
+/* =========================================
+            base styles
+========================================= */
 
 :root {
     --primary-color: #172B4D;
@@ -11,5 +13,56 @@
     --border-color: #E1E5EA;
 
     --font-family: 'Poppins', sans-serif;
+}
+
+/* =========================================
+            reset
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: min(90%, var(--container-width));
+    margin: 0 auto;
+}
+
+[hidden] {
+    display: none !important;
 }
 
