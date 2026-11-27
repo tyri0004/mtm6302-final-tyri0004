@@ -756,3 +756,54 @@ function loadQuote() {
 
     }
 }
+
+// ================================================
+// 12. CLEAR QUOTE
+// ================================================
+
+// Show the confirmation message before clearing.
+function showClearConfirmation() {
+
+    if (clearConfirmation) {
+        clearConfirmation.hidden = false;
+    }
+
+    hideMessages();
+}
+
+
+// Clear the quote after confirmation.
+function clearQuote() {
+
+    // Empty the quote array.
+    quote = [];
+
+    // Clear project notes.
+    if (projectNotes) {
+        projectNotes.value = "";
+    }
+
+    // Remove the saved quote from Local Storage.
+    localStorage.removeItem(storageKey);
+
+    // Refresh the quote display.
+    displayQuote();
+
+    // Hide the confirmation message.
+    if (clearConfirmation) {
+        clearConfirmation.hidden = true;
+    }
+
+    showSuccess("Your quote has been cleared.");
+}
+
+
+// Cancel the clear action.
+function cancelClear() {
+
+    if (clearConfirmation) {
+        clearConfirmation.hidden = true;
+    }
+
+    hideMessages();
+}
