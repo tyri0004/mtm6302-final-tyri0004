@@ -261,6 +261,29 @@ let selectedCategory = "All";
 // Local Storage key.
 const storageKey = "zonmaxsignQuote";
 
+// ================================================
+// 2. DOM ELEMENT SELECTION
+// ================================================
+
+const productList = document.querySelector("#product-list");
+const categoryFilters = document.querySelector(".category-filters");
+const noProductsMessage = document.querySelector("#no-products");
+
+const quoteItems = document.querySelector("#quote-items");
+const itemCount = document.querySelector("#item-count");
+const itemCountSummary = document.querySelector("#item-count-summary");
+const totalQuantity = document.querySelector("#total-quantity");
+const estimatedTotal = document.querySelector("#estimated-total");
+
+const projectNotes = document.querySelector("#project-notes");
+
+const clearQuoteButton = document.querySelector("#clear-quote");
+const clearConfirmation = document.querySelector("#clear-confirmation");
+const confirmClearButton = document.querySelector("#confirm-clear");
+const cancelClearButton = document.querySelector("#cancel-clear");
+
+const successMessage = document.querySelector("#success-message");
+const errorMessage = document.querySelector("#error-message");
 
 
 
