@@ -333,3 +333,66 @@ function hideMessages() {
     }
 }
 
+// ================================================
+// 4. DISPLAY PRODUCTS
+// ================================================
+
+function displayProducts(productArray = products) {
+
+    if (!productList) return;
+
+    // Clear the existing product cards.
+    productList.innerHTML = "";
+
+    // Show a message if there are no matching products.
+    if (noProductsMessage) {
+        noProductsMessage.hidden = productArray.length !== 0;
+    }
+
+    // Create a card for each product.
+    productArray.forEach(product => {
+
+        const productCard = document.createElement("article");
+
+        productCard.classList.add("product-card");
+
+        productCard.innerHTML = `
+            <img
+                src="${product.image}"
+                alt="${product.name}"
+                class="product-image"
+            >
+
+            <div class="product-card-content">
+
+                <span class="product-category">
+                    ${product.category}
+                </span>
+
+                <h3>${product.name}</h3>
+
+                <p>${product.description}</p>
+
+                <p class="product-size">
+                    <strong>Size:</strong> ${product.size}
+                </p>
+
+                <p class="product-price">
+                    ${formatPrice(product.price)}
+                </p>
+
+                <button
+                    type="button"
+                    class="add-to-quote"
+                    data-product-id="${product.id}"
+                >
+                    Add to Quote
+                </button>
+
+            </div>
+        `;
+
+        productList.appendChild(productCard);
+    });
+}
+
