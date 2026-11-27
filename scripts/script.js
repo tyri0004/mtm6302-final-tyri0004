@@ -807,3 +807,96 @@ function cancelClear() {
 
     hideMessages();
 }
+
+
+// ================================================
+// 13. EVENT LISTENERS
+// ================================================
+
+// Category filter buttons.
+if (categoryFilters) {
+
+    categoryFilters.addEventListener("click", event => {
+
+        const button = event.target.closest("[data-category]");
+
+        if (!button) return;
+
+        filterProducts(button.dataset.category);
+
+        hideMessages();
+    });
+}
+
+
+// Add to Quote buttons.
+if (productList) {
+
+    productList.addEventListener("click", event => {
+
+        const button = event.target.closest(".add-to-quote");
+
+        if (!button) return;
+
+        addToQuote(button.dataset.productId);
+    });
+}
+
+
+// Quantity input controls.
+if (quoteItems) {
+
+    quoteItems.addEventListener("change", event => {
+
+        if (!event.target.classList.contains("quantity-input")) {
+            return;
+        }
+
+        updateQuantity(
+            event.target.dataset.productId,
+            event.target.value
+        );
+    });
+
+
+    // Remove buttons.
+    quoteItems.addEventListener("click", event => {
+
+        const button = event.target.closest(".remove-button");
+
+        if (!button) return;
+
+        removeFromQuote(button.dataset.productId);
+    });
+}
+
+
+// Project notes.
+if (projectNotes) {
+
+    projectNotes.addEventListener("input", () => {
+        saveQuote();
+    });
+}
+
+
+// Clear quote button.
+if (clearQuoteButton) {
+
+    clearQuoteButton.addEventListener("click", showClearConfirmation);
+}
+
+
+// Confirm clearing the quote.
+if (confirmClearButton) {
+
+    confirmClearButton.addEventListener("click", clearQuote);
+}
+
+
+// Cancel clearing the quote.
+if (cancelClearButton) {
+
+    cancelClearButton.addEventListener("click", cancelClear);
+}
+
