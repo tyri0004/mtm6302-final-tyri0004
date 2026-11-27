@@ -414,20 +414,41 @@ textarea:focus-visible {
   add to quote
 ========================================= */
 
-.add-button {
+.add-to-quote {
+    display: block;
     width: 100%;
-    padding: 12px;
-    background-color: var(--primary-color);
-    color: var(--background-color);
+    padding: 12px 20px;
+    margin-top: 16px;
+
+    background-color: #FF8A35;
+    color: #FFFFFF;
+
     border: none;
-    border-radius: 5px;
-    font-size: 0.85rem;
+    border-radius: 6px;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
     font-weight: 600;
-    transition: background-color 0.2s ease;
+
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.add-button:hover {
-    background-color: var(--secondary-color);
+
+.add-to-quote:hover {
+    background-color: #e87520;
+    transform: translateY(-2px);
+}
+
+
+.add-to-quote:active {
+    transform: translateY(0);
+}
+
+
+.add-to-quote:focus-visible {
+    outline: 3px solid #172B4D;
+    outline-offset: 3px;
 }
 
 
