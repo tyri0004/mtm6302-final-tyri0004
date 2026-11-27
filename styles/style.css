@@ -1,4 +1,4 @@
-/* Site variables */
+/* base styles */
 
 :root {
     --primary-color: #172B4D;
@@ -12,3 +12,4 @@
 
     --font-family: 'Poppins', sans-serif;
 }
+
