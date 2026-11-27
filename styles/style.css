@@ -346,7 +346,7 @@ textarea:focus-visible {
 
 .product-image {
     width: 100%;
-    height: 210px;
+    height: 220px;
     background-color: var(--light-grey);
     overflow: hidden;
 }
@@ -354,6 +354,7 @@ textarea:focus-visible {
 .product-image img {
     width: 100%;
     height: 100%;
+    display: block;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
@@ -414,40 +415,40 @@ textarea:focus-visible {
   add to quote
 ========================================= */
 
-.add-to-quote {
+/* Add to Quote Button */
+
+.add-button {
     display: block;
     width: 100%;
-    padding: 12px 20px;
-    margin-top: 16px;
+    padding: 12px 18px;
 
-    background-color: #FF8A35;
+    background-color: var(--secondary-color);
     color: #FFFFFF;
 
     border: none;
     border-radius: 6px;
 
     font-family: 'Poppins', sans-serif;
-    font-size: 15px;
+    font-size: 0.9rem;
     font-weight: 600;
 
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    transition: background-color 0.3s ease,
+                transform 0.2s ease;
 }
 
-
-.add-to-quote:hover {
+.add-button:hover {
     background-color: #e87520;
     transform: translateY(-2px);
 }
 
-
-.add-to-quote:active {
+.add-button:active {
     transform: translateY(0);
 }
 
-
-.add-to-quote:focus-visible {
-    outline: 3px solid #172B4D;
+.add-button:focus-visible {
+    outline: 3px solid var(--primary-color);
     outline-offset: 3px;
 }
 

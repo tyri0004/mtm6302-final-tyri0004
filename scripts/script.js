@@ -341,15 +341,12 @@ function displayProducts(productArray = products) {
 
     if (!productList) return;
 
-    // Clear the existing product cards.
     productList.innerHTML = "";
 
-    // Show a message if there are no matching products.
     if (noProductsMessage) {
         noProductsMessage.hidden = productArray.length !== 0;
     }
 
-    // Create a card for each product.
     productArray.forEach(product => {
 
         const productCard = document.createElement("article");
@@ -357,13 +354,14 @@ function displayProducts(productArray = products) {
         productCard.classList.add("product-card");
 
         productCard.innerHTML = `
-            <img
-                src="${product.image}"
-                alt="${product.name}"
-                class="product-image"
-            >
+            <div class="product-image">
+                <img
+                    src="${product.image}"
+                    alt="${product.name}"
+                >
+            </div>
 
-            <div class="product-card-content">
+            <div class="product-information">
 
                 <span class="product-category">
                     ${product.category}
@@ -373,18 +371,16 @@ function displayProducts(productArray = products) {
 
                 <p>${product.description}</p>
 
-                <p class="product-size">
-                    <strong>Size:</strong> ${product.size}
-                </p>
-
-                <p class="product-price">
-                    ${formatPrice(product.price)}
-                </p>
+                <div class="product-details">
+                    <span>${product.size}</span>
+                    <strong>${formatPrice(product.price)}</strong>
+                </div>
 
                 <button
                     type="button"
-                    class="add-to-quote"
+                    class="add-button"
                     data-product-id="${product.id}"
+                    aria-label="Add ${product.name} to quote"
                 >
                     Add to Quote
                 </button>
@@ -395,7 +391,6 @@ function displayProducts(productArray = products) {
         productList.appendChild(productCard);
     });
 }
-
 
 // ================================================
 // 5. FILTER PRODUCTS
@@ -834,11 +829,11 @@ if (productList) {
 
     productList.addEventListener("click", event => {
 
-        const button = event.target.closest(".add-to-quote");
+    const button = event.target.closest(".add-button");
 
-        if (!button) return;
+    if (!button) return;
 
-        addToQuote(button.dataset.productId);
+    addToQuote(button.dataset.productId);
     });
 }
 
