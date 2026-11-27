@@ -442,9 +442,77 @@
 
                     <!-- clear quote button -->
 
-                     <button type="button" class="clear-button" id="clear-quote">
+                    <button type="button" class="clear-button" id="clear-quote">
                      Clear Quote List
                     </button>
+
+                       <!-- clear conformation state -->
+
+                        <div
+                            id="clear-confirmation"
+                            class="feedback-message confirmation-message"
+                            role="group"
+                            aria-label="Confirm clearing quote list"
+                            hidden
+                        >
+
+                            <p>
+                                Are you sure you want to clear your quote?
+                            </p>
+
+                            <button
+                                type="button"
+                                id="confirm-clear"
+                            >
+                                Yes, Clear
+                            </button>
+
+                            <button
+                                type="button"
+                                id="cancel-clear"
+                            >
+                                Cancel
+                            </button>
+
+                        </div>
+
+
+
+                        <!-- success -->
+
+                        <p
+                            id="success-message"
+                            class="feedback-message success-message"
+                            role="status"
+                            aria-live="polite"
+                            hidden
+                        >
+                            Product successfully added to your quote!
+                        </p>
+
+
+
+                        <!-- error -->
+
+                        <p
+                            id="error-message"
+                            class="feedback-message error-message"
+                            role="alert"
+                            hidden
+                        >
+                            Something went wrong. Please try again.
+                        </p>
+
+
+                    </aside>
+
+
+                </div>
+
+            </div>
+
+         </section>
+
 
 
         </section>
