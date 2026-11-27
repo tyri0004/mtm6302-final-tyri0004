@@ -243,3 +243,226 @@ textarea:focus-visible {
     color: var(--muted-color);
     font-size: 0.95rem;
 }
+
+ /* =========================================
+   product and quote 
+========================================= */
+
+.shop-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 340px;
+    align-items: start;
+    gap: 35px;
+}
+
+.catalogue {
+    min-width: 0;
+}
+
+
+/* =========================================
+  category
+========================================= */
+
+.category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.filter-button {
+    padding: 9px 17px;
+    background-color: var(--light-grey);
+    color: var(--primary-color);
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.filter-button:hover {
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+.filter-button.active {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
+
+/* =========================================
+   product grid
+========================================= */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+
+/* =========================================
+   product cards
+========================================= */
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(23, 43, 77, 0.09);
+}
+
+.product-image {
+    width: 100%;
+    height: 210px;
+    background-color: var(--light-grey);
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.04);
+}
+
+.product-information {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.product-category {
+    color: var(--secondary-color);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 7px;
+}
+
+.product-information h3 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 9px;
+}
+
+.product-information p {
+    color: var(--muted-color);
+    font-size: 0.82rem;
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+.product-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: auto;
+    margin-bottom: 18px;
+}
+
+.product-details span {
+    color: var(--muted-color);
+    font-size: 0.78rem;
+}
+
+.product-details strong {
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+/* =========================================
+  add to quote
+========================================= */
+
+.add-button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.add-button:hover {
+    background-color: var(--secondary-color);
+}
+
+
+/* =========================================
+   no products
+========================================= */
+
+.empty-results {
+    padding: 25px;
+    background-color: var(--light-grey);
+    color: var(--muted-color);
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+
+/* =========================================
+   quote side bar
+========================================= */
+
+.quote-sidebar {
+    position: sticky;
+    top: 105px;
+    background-color: var(--light-grey);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.quote-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.quote-header .eyebrow {
+    margin-bottom: 5px;
+}
+
+.quote-header h2 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.item-count {
+    padding: 6px 10px;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border-radius: 20px;
+    font-size: 0.7rem;
+    white-space: nowrap;
+}
+
+
