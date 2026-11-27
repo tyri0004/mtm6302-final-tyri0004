@@ -396,3 +396,46 @@ function displayProducts(productArray = products) {
     });
 }
 
+
+// ================================================
+// 5. FILTER PRODUCTS
+// ================================================
+
+function filterProducts(category) {
+
+    // Update the selected category.
+    selectedCategory = category;
+
+    let filteredProducts;
+
+    // Show every product when All is selected.
+    if (category === "All") {
+
+        filteredProducts = products;
+
+    } else {
+
+        // Only show products matching the selected category.
+        filteredProducts = products.filter(product => {
+            return product.category === category;
+        });
+    }
+
+    // Display the filtered products.
+    displayProducts(filteredProducts);
+
+    // Update the active filter button.
+    if (categoryFilters) {
+
+        const filterButtons = categoryFilters.querySelectorAll("[data-category]");
+
+        filterButtons.forEach(button => {
+
+            const isActive = button.dataset.category === category;
+
+            button.classList.toggle("active", isActive);
+            button.setAttribute("aria-pressed", isActive);
+
+        });
+    }
+}
