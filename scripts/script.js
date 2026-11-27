@@ -670,3 +670,89 @@ function calculateTotal() {
     return total;
 }
 
+// ================================================
+// 11. LOCAL STORAGE
+// ================================================
+
+function saveQuote() {
+
+    try {
+
+        // Save quote items and project notes together.
+        const quoteData = {
+            items: quote,
+            notes: projectNotes ? projectNotes.value : ""
+        };
+
+        localStorage.setItem(storageKey, JSON.stringify(quoteData));
+
+    } catch (error) {
+
+        console.error("Unable to save quote:", error);
+
+        showError("Your quote could not be saved. Please check your browser storage settings.");
+
+    }
+}
+
+
+function loadQuote() {
+
+    try {
+
+        // Retrieve the saved quote from Local Storage.
+        const savedQuote = localStorage.getItem(storageKey);
+
+        if (!savedQuote) {
+            quote = [];
+            return;
+        }
+
+        const parsedData = JSON.parse(savedQuote);
+
+        // Support both the current saved format and an older array format.
+        const savedItems = Array.isArray(parsedData)
+            ? parsedData
+            : parsedData.items;
+
+        if (!Array.isArray(savedItems)) {
+            throw new Error("Saved quote data is invalid.");
+        }
+
+        // Keep only valid products and positive whole-number quantities.
+        quote = savedItems.filter(item => {
+
+            const productExists = products.some(product => {
+                return product.id === Number(item.productId);
+            });
+
+            return (
+                productExists &&
+                Number.isInteger(Number(item.quantity)) &&
+                Number(item.quantity) > 0
+            );
+
+        }).map(item => ({
+            productId: Number(item.productId),
+            quantity: Number(item.quantity)
+        }));
+
+        // Restore project notes if they were saved.
+        if (
+            projectNotes &&
+            !Array.isArray(parsedData) &&
+            typeof parsedData.notes === "string"
+        ) {
+            projectNotes.value = parsedData.notes;
+        }
+
+    } catch (error) {
+
+        console.error("Unable to load saved quote:", error);
+
+        quote = [];
+
+        showError("Your saved quote could not be loaded. A new quote has been started.");
+
+    }
+}
