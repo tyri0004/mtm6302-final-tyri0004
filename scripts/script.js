@@ -286,4 +286,50 @@ const successMessage = document.querySelector("#success-message");
 const errorMessage = document.querySelector("#error-message");
 
 
+// ================================================
+// 3. HELPER FUNCTIONS
+// ================================================
+
+// Format prices as Canadian dollars.
+function formatPrice(price) {
+    return new Intl.NumberFormat("en-CA", {
+        style: "currency",
+        currency: "CAD"
+    }).format(price);
+}
+
+// Display a success message.
+function showSuccess(message) {
+    if (!successMessage) return;
+
+    successMessage.textContent = message;
+    successMessage.hidden = false;
+
+    if (errorMessage) {
+        errorMessage.hidden = true;
+    }
+}
+
+// Display an error message.
+function showError(message) {
+    if (!errorMessage) return;
+
+    errorMessage.textContent = message;
+    errorMessage.hidden = false;
+
+    if (successMessage) {
+        successMessage.hidden = true;
+    }
+}
+
+// Hide both feedback messages.
+function hideMessages() {
+    if (successMessage) {
+        successMessage.hidden = true;
+    }
+
+    if (errorMessage) {
+        errorMessage.hidden = true;
+    }
+}
 
