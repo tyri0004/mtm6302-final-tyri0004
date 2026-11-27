@@ -66,3 +66,14 @@ a {
     display: none !important;
 }
 
+
+/* =========================================
+   accessibility
+========================================= */
+
+button:focus-visible,
+a:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--secondary-color);
+    outline-offset: 3px;
+}
