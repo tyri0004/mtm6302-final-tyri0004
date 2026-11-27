@@ -479,3 +479,89 @@ function addToQuote(productId) {
     showSuccess(`${product.name} added to your quote.`);
 }
 
+// ================================================
+// 7. DISPLAY QUOTE
+// ================================================
+
+function displayQuote() {
+
+    if (!quoteItems) return;
+
+    // Clear the current quote display.
+    quoteItems.innerHTML = "";
+
+    // Display an empty message if no products are selected.
+    if (quote.length === 0) {
+
+        quoteItems.innerHTML = `
+            <p id="empty-quote">
+                Your quote is currently empty. Add a product to get started.
+            </p>
+        `;
+
+    } else {
+
+        // Display every product in the quote.
+        quote.forEach(item => {
+
+            const product = products.find(product => {
+                return product.id === item.productId;
+            });
+
+            // Skip any invalid product entries.
+            if (!product) return;
+
+            const subtotal = product.price * item.quantity;
+
+            const quoteItem = document.createElement("div");
+
+            quoteItem.classList.add("quote-item");
+
+            quoteItem.innerHTML = `
+                <div class="quote-item-header">
+
+                    <h4>${product.name}</h4>
+
+                    <button
+                        type="button"
+                        class="remove-button"
+                        data-product-id="${product.id}"
+                        aria-label="Remove ${product.name} from quote"
+                    >
+                        Remove
+                    </button>
+
+                </div>
+
+                <p>${formatPrice(product.price)} each</p>
+
+                <div class="quote-item-controls">
+
+                    <label for="quantity-${product.id}">
+                        Quantity:
+                    </label>
+
+                    <input
+                        type="number"
+                        id="quantity-${product.id}"
+                        class="quantity-input"
+                        data-product-id="${product.id}"
+                        value="${item.quantity}"
+                        min="1"
+                        step="1"
+                    >
+
+                </div>
+
+                <p class="quote-item-subtotal">
+                    Subtotal: <strong>${formatPrice(subtotal)}</strong>
+                </p>
+            `;
+
+            quoteItems.appendChild(quoteItem);
+        });
+    }
+
+    // Update the quote summary.
+    calculateTotal();
+}
